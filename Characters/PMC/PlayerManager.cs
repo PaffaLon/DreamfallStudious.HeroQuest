@@ -1,10 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+
 
 namespace Characters.PMC
 {
     public class PlayerManager
     {
-        private List<Player> _players = new();       
+        private readonly List<Player> _players = new();       
 
 
         /// <summary>
@@ -16,53 +19,61 @@ namespace Characters.PMC
         public void SavePlayer(Player player)
         {
             if (player == null)
-                throw new ArgumentNullException();
+                throw new ArgumentNullException($"{nameof(player)}: Can't be null.");
 
             if (_players.Any(p => p.ID == player.ID))
-                throw new Exception($"Player with ID: {player.ID}, already exsists. {nameof(player)}");
+                throw new InvalidOperationException($"Player with ID: {player.ID}, already exsists. {nameof(player)}");
 
             _players.Add(player);
         }
 
-        // This method may requiers improvment to handle a null value of the parameter accordingly. Usage for a try, catch?
-        public Player GetPlayer(Player getPlayer, out long lookUpTimeMs)
+        /// <summary>
+        /// Retrieves a specific <see cref="Player"/> object by its unique ID.
+        /// </summary>
+        /// <param name="playerId">The unique ID of the player to retrieve.</param>
+        /// <param name="lookUpTimeMs">Outputs the time taken for the lookup in milliseconds.</param>
+        /// <returns>The found Player object, or null if not found.</returns>
+        public Player? GetPlayer(Guid playerID, out long lookUpTimeMs)
         {
             Stopwatch sw = Stopwatch.StartNew();
             sw.Start();
 
-            Player foundPlayer = null;
-            foreach (var p in _players)
-                if (p == getPlayer)
-                {
-                    foundPlayer = p;
-                    break;
-                }
+            // Using LINQ's FirstOrDefault is concise and efficient for finding by ID
+            Player? foundPlayer = _players.FirstOrDefault(p => p.ID == playerID);
 
             sw.Stop();
             lookUpTimeMs = sw.ElapsedMilliseconds;
+
+
+            // Can be null. Handle exeption when returned to caller.
             return foundPlayer;
         }
 
         /// <summary>
-        /// 
+        /// Returns a list of all player objects managed.
         /// </summary>
-        /// <returns>Returns a list of all player objects.</returns>
+        /// <remarks>
+        /// Consider returning an IReadOnlyList<Player> or a new List<Player>
+        /// if you want to prevent external modification of the internal list.
+        /// For test purposes, returning the internal list is acceptable.
+        /// </remarks>
         public List<Player> GetAllPlayers() { return _players; }
 
         /// <summary>
-        /// Deletes a speceif <see cref="Player"/> object from <see cref="_players"/>.
+        /// Deletes a specific <see cref="Player"/> object from the manager.
         /// </summary>
-        /// <param name="player"></param>
+        /// <param name="player">The player object to delete.</param>
+        /// <returns>True if the player was found and removed, false otherwise.</returns>
         public void DeletePlayer(Player player) { _players.Remove(player); }
 
 
         /// <summary>
-        /// Deletes all <see cref="Player"/> objects from <see cref="_players"/>.
+        /// Deletes all <see cref="Player"/> objects from the <see cref="_players"/>.
         /// </summary>
         public void DeleteAllPlayers()
         {
             foreach (var p in _players)
-                _players.Remove(p);
+                _players.Clear();
         }
 
     }

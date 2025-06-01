@@ -1,6 +1,6 @@
 namespace CharacterTests
 {
-    public class CreateCharacterTest
+    public class CreatePlayerTest
     {
         [SetUp]
         public void Setup()
