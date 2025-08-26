@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <!-- ************************************ -->
+        <!-- *******  Application Wrapper ******* -->
+        <!-- ************************************ -->
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden">
 
+        </Frame>
     </Grid>
 </Window>

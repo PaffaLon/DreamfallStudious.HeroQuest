@@ -65,6 +65,12 @@ namespace Characters.PMC
         /// <param name="player">The player object to delete.</param>
         /// <returns>True if the player was found and removed, false otherwise.</returns>
         public void DeletePlayer(Player player) { _players.Remove(player); }
+        public void DeletePlayer(Guid id) 
+        { 
+            foreach (Player player in _players)
+                if(player.ID == id)
+                    _players.Remove(player);
+        }
 
 
         /// <summary>

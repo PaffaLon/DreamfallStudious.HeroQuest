@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Graphviz" Version="2.38.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PlantUml.Net" Version="1.4.80" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Attributes\Attributes.csproj" />
   </ItemGroup>
 

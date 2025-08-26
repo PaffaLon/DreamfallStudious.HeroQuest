@@ -1,0 +1,162 @@
+﻿<Page x:Class="HeroQuest.UI.WPF.Pages.Character.CharacterCreationTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HeroQuest.UI.WPF.Pages.Character"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CharacterCreationTest">
+
+    <Grid Background="Wheat" ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/> <!--Header-->
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Player Character TEST</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0">Character Creation</TextBlock>
+        
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <TextBlock>Enter Character name:</TextBlock>
+                <TextBox Width="82" Height="18" Margin="10,0,0,0"></TextBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <TextBlock>EXP :</TextBlock>
+                <TextBlock Width="82" Height="18" Margin="10,0,0,0"></TextBlock>
+
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Target="{Binding ElementName=StrengthVal}">Strength</Label>
+                <Label Grid.Column="0" Grid.Row="1" Margin="8,0,0,0"  Target="{Binding ElementName=ConVal}">Constitution</Label>
+                <Label Grid.Column="0" Grid.Row="2" Margin="16,0,0,0" Target="{Binding ElementName=EnduranceVal}">Endurance</Label>
+                <Label Grid.Column="0" Grid.Row="3" Margin="28,0,0,0" Target="{Binding ElementName=HealthVal}">Health</Label>
+                <Label Grid.Column="0" Grid.Row="4" Margin="28,0,0,0" Target="{Binding ElementName=StaminaVal}">Stamina</Label>
+
+
+                <TextBlock x:Name="SetStrength"  Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="SetCon"       Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="SetEndurance" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="SetHealth"    Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="SetStamina"   Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+
+                <Button Grid.Column="2" Grid.Row="0" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="1" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="2" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="3" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="4" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+
+                <Button Grid.Column="3" Grid.Row="0" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="1" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="2" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="3" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="4" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+            </Grid>
+            <Button x:Name="SaveNewPlayerCharacter" Margin="0,10,0,0">Save Character</Button>
+        </StackPanel>
+
+        <!-- Far right column -->
+        <TextBlock Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3">Loaded Character</TextBlock>
+
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <TextBlock x:Name="GetPlayerCharacterName" Margin="0,0,0,10"></TextBlock>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <TextBlock>EXP :</TextBlock>
+                <TextBlock Width="82" Height="18" Margin="10,0,0,0"></TextBlock>
+
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Target="{Binding ElementName=StrengthVal}">Strength</Label>
+                <Label Grid.Column="0" Grid.Row="1" Margin="8,0,0,0"  Target="{Binding ElementName=ConVal}">Constitution</Label>
+                <Label Grid.Column="0" Grid.Row="2" Margin="16,0,0,0" Target="{Binding ElementName=EnduranceVal}">Endurance</Label>
+                <Label Grid.Column="0" Grid.Row="3" Margin="28,0,0,0" Target="{Binding ElementName=HealthVal}">Health</Label>
+                <Label Grid.Column="0" Grid.Row="4" Margin="28,0,0,0" Target="{Binding ElementName=StaminaVal}">Stamina</Label>
+
+
+                <TextBlock x:Name="GetStrengthVal"  Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="GetConVal"       Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="GetEnduranceVal" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="GetHealthVal"    Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+                <TextBlock x:Name="GetStaminaVal"   Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="42" >Value</TextBlock>
+
+                <Button Grid.Column="2" Grid.Row="0" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="1" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="2" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="3" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+                <Button Grid.Column="2" Grid.Row="4" Width="24" FontWeight="Bold" FontSize="18">+</Button>
+
+                <Button Grid.Column="3" Grid.Row="0" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="1" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="2" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="3" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+                <Button Grid.Column="3" Grid.Row="4" Width="24" FontWeight="Bold" FontSize="18">-</Button>
+            </Grid>
+            <Button x:Name="SaveChnages" Margin="0,10,0,0">Save Changes</Button>
+        </StackPanel>
+
+        <!-- All Player Objects -->
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1" Margin="10">
+            <StackPanel>
+                <TextBlock FontWeight="Bold" Margin="5">All Players</TextBlock>
+                <ListBox x:Name="PlayerListBox"
+                         Height="300"
+                         SelectionChanged="PlayerListBox_SelectionChanged">
+                    <!--<ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type pmc:Player}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                <TextBlock Text=" (ID: " Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding ID}" />
+                                <TextBlock Text=")" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>-->
+                </ListBox>
+                <Button x:Name="RefreshPlayerListButton" Margin="5,5,5,0" Content="Refresh List" Click="RefreshPlayerListButton_Click"/>
+                <Button x:Name="DeleteSelectedPlayerButton" Margin="5,5,5,0" Content="Delete Selected" Click="DeleteSelectedPlayerButton_Click"/>
+                <Button x:Name="DeleteAllPlayersButton" Margin="5,5,5,0" Content="Delete All Players" Click="DeleteAllPlayersButton_Click"/>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

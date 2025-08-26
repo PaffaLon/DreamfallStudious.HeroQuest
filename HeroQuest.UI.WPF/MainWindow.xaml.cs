@@ -19,6 +19,7 @@ namespace HeroQuest.UI.WPF
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Pages.Character.CharacterCreationTest());
         }
     }
 }

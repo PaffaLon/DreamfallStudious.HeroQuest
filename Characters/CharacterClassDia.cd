@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Characters.Character">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAABAAoAAAAAAgCBUABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.PMC.Player" Collapsed="true">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAIAAAAAAgCBAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PMC\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.PMC.PlayerManager" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAgEAAAAAABAAQBAAAAAAAAAAAAA=</HashCode>
+      <FileName>PMC\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.PlayerFactory" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAgBAAAAAAQQAAAIABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PMC\PlayerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

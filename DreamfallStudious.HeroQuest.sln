@@ -13,17 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4BEBC93B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MiddlewareLayer", "MiddlewareLayer", "{27AAE9BF-FFCE-46D7-9CC9-F80D9D771BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attributes", "Attributes\Attributes.csproj", "{74DA6918-B4BF-4F15-9B43-D05FC14EA462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Attributes", "Attributes\Attributes.csproj", "{74DA6918-B4BF-4F15-9B43-D05FC14EA462}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{00CA6C9A-0BA9-4463-9A89-C68249298DCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "Characters\Characters.csproj", "{B4E0C72A-64E3-4F61-8C40-C609460F7249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Characters", "Characters\Characters.csproj", "{B4E0C72A-64E3-4F61-8C40-C609460F7249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effects", "Effects\Effects.csproj", "{3FFA7D75-C2C1-46CE-8A28-433ED1E0F82A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effects", "Effects\Effects.csproj", "{3FFA7D75-C2C1-46CE-8A28-433ED1E0F82A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Items", "Items\Items.csproj", "{5C888F31-7E16-477E-98B4-86EB0CC548DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Items", "Items\Items.csproj", "{5C888F31-7E16-477E-98B4-86EB0CC548DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterTesting", "CharacterTesting\CharacterTesting.csproj", "{1A36D419-CD87-4380-AB49-67C73EB392DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterTesting", "CharacterTesting\CharacterTesting.csproj", "{1A36D419-CD87-4380-AB49-67C73EB392DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{024257AC-765D-4EAC-AA16-C450C27D12C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
